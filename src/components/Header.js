@@ -52,8 +52,8 @@ const Header=()=>{
         )} 
       </select>}
     <button className="py-2 px-4 my-2 mx-4 bg-purple-800 text-white rounded-lg"onClick={handleGPTsearch}>{showgpt?"Homepage":"GPT search"} </button>
-    <img className="w-12 h-12 hidden md:block" alt="usericon" src={UserIcon}/>
-    <button onClick={handlesignout}className="text-white font-bold">Sign out</button>
+    <img className="w-11 h-12 hidden md:block" alt="usericon" src={UserIcon}/>
+    <button onClick={handlesignout}className="px-2 hover:bg-white hover:text-black text-white font-bold">Login-:{user.displayName.toUpperCase()}</button>
     </div>}
 </div>
     )

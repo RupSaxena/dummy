@@ -5,11 +5,13 @@ import Maincontainer from "./Mainconatiner";
 import Secondarycontainer from "./Secondarycontainer";
 import usePopularmovies from "../hooks/usePopularmovies";
 import GPTsearch from "./GPTsearch";
+import useToprated from "../hooks/useToprated";
 
 const Browse=()=>{
     const showgpt=useSelector((store)=>store.gpt.showgpt)
    useNowPlayingMovies();
    usePopularmovies();
+   useToprated();
     return (
         <div>    
          <Header/>

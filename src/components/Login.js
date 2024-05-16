@@ -76,7 +76,7 @@ createUserWithEmailAndPassword(auth,emailvar.current.value, passvar.current.valu
 <div>
    <Header/> 
    <div className="absolute">
-    <img className="h-screen object-cover"src={BG_URL} alt="back"/>
+    <img className="h-screen w-screen object-cover"src={BG_URL} alt="back"/>
    </div>
    <form onSubmit={(e)=>e.preventDefault()} className="w-full md:w-3/12 absolute p-12 bg-black right-0 left-0 mx-auto my-36 text-white rounded-lg bg-opacity-80">
     <h1 className="font-bold text-3xl py-4">{isSignin?"Sign in":"Sign up"}</h1>

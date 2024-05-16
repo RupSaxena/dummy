@@ -18,7 +18,7 @@ const GPTsearchbar=()=>{
 
     }
     const handlegptsearchclick=async()=>{
-        const gptQuery="Act as a Movie Recommendation system and suggest spme movies for the query:"+searchtext.current.value+".only give ne names of 5 movies ,comma separated like the example result given ahead.Example Result:Gadar,Sholay,Golmal"
+        const gptQuery="Act as a Movie Recommendation system and suggest some movies for the query:"+searchtext.current.value+".only give me names of 10 movies ,comma separated like the example result given ahead.Example Result:Gadar,Sholay,Golmal"
         const model=genAI.getGenerativeModel({model:"gemini-pro"});
         const gptResults= await model.generateContent(gptQuery);
             const response= gptResults.response;

@@ -4,7 +4,7 @@ export const API_OPTIONS= {
     method: 'GET',
     headers: {
       accept: 'application/json',
-      Authorization: "Bearer "+  process.env.REACT_APP_TMDB
+      Authorization: "Bearer "+process.env.REACT_APP_TMDB
     }
   };
   export const Gemini_KEY=process.env.REACT_APP_Gemini_KEY;
