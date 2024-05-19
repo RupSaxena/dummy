@@ -15,10 +15,10 @@ const Browse=()=>{
     return (
         <div>    
          <Header/>
-         {showgpt?
-         <GPTsearch/>:<>
+         {showgpt?(
+         <GPTsearch/>):(<>
             <Maincontainer/>   
-        <Secondarycontainer/></>}
+        <Secondarycontainer/></>)}
         
         </div>
     )

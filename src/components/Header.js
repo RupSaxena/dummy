@@ -29,12 +29,14 @@ const Header=()=>{
               const {uid,email,displayName,photoURL} = user;
               dispatch(adduser({uid:uid,email:email,displayName:displayName,photoURL:photoURL}))
               // ...
-              navigate("/browse");
+             if(window.location.pathname==="/") {
+              navigate("/browse");}
             } else {
               // User is signed out
               // ...
-              navigate("/");
+             
               dispatch(removeuser())
+              navigate("/");
     
             }
           });

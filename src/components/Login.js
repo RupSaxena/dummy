@@ -61,7 +61,7 @@ createUserWithEmailAndPassword(auth,emailvar.current.value, passvar.current.valu
         seterrmsg(error.message)
       });
       
-    navigate("/browse")
+   // navigate("/browse")
     // ...
   })
   .catch((error) => {
