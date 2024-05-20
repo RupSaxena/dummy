@@ -1,4 +1,5 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import { IMG_CDN } from "../utils/Constants";
 
 const DataCss =
@@ -6,15 +7,16 @@ const DataCss =
 const ValueCss =
   "text-white border border-red xl:px-4 md:px-4 sm:px-4  m-1 rounded-2xl bg-gray-500 ";
 const CardTopInfo = ({ info }) => {
-
+  const navigate=useNavigate();
   // const playTrailer=()=>{
 
   // }
   return (
-    <div className="pt-40 flex flex-row justify-between xl:pt-60 xl:px-28 px-3">
+    <div className="pt-40 flex flex-col justify-between xl:pt-60 xl:px-28 px-3 lg:flex-row">
       <div className="xl:w-3.5/12 w-4/12">
+        
         <img
-          className="xl:w-72 lg:w-64 md:w-60 sm:w-48 w-28  rounded-2xl"
+          className="w-screen xl:w-72 lg:w-64 md:w-60 sm:w-48  rounded-2xl"
           src={IMG_CDN + info?.poster_path}
           alt="movieicon-card"
         ></img>
@@ -54,11 +56,12 @@ const CardTopInfo = ({ info }) => {
             <span className={ValueCss}>🌟{info?.popularity}</span>
           </div>
             <button className=" border border-red-800 px-1 m-2  rounded-lg bg-gray-500 text-white font-semibold text-2xl h-12 hover:bg-green-400 hover:cursor-pointer">play trailer ▶️</button>
+            <button className="text-white bg-black m-2 px-3 h-10 text-lg rounded-lg hover:bg-green-400 hover:cursor-pointer " onClick={()=>navigate("/browse")}>Back to Home page</button>
         </div>
         {/* tagline */}
         {info?.tagline&&<div className="flex flex-row justify-center items-center py-0.5 lg:py-4 md:py-3 sm:py-2 xl:py-5">
           <span className="xl:text-3xl lg:text-xl md:text-lg sm:text-base text-[9px] font-semibold  text-white xl:pr-2 lg:pr-2 md:pr-1 sm:pr-1 pr-0.5">
-            Tagline:{" "}
+            Tagline:{" "} 
           </span>
           <span className="text-cyan-400 xl:text-2xl lg:text-2xl md:text-xl sm:text-base text-[9px] ">
             "{info?.tagline}"

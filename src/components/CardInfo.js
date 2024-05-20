@@ -10,6 +10,8 @@ import CastCard from "./CastCard";
 
 const CardInfo=()=>{
     const { id }=useParams();
+  
+
     useMovieInfo(id);
     const info=useSelector(store=>store.movies.movieInfo)
 useMovieCast(id);

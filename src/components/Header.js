@@ -2,14 +2,16 @@ import { signOut,onAuthStateChanged } from "firebase/auth";
 import { auth } from "../utils/firebase";
 import { LOGO, SUPPORTED_LANGUAGE, UserIcon } from "../utils/Constants";
 import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { adduser,removeuser } from "../utils/UserSlice";
 import { useNavigate } from "react-router-dom";
 import { togglegptsearch } from "../utils/gptslice";
 import { changelanguage } from "../utils/configslice";
+
 const Header=()=>{
     const navigate=useNavigate();
     const dispatch=useDispatch();
+    
     const user=useSelector(store=>store.user)
     const showgpt=useSelector(store=>store.gpt.showgpt)
     const handlesignout=()=>{
@@ -54,10 +56,12 @@ const Header=()=>{
         )} 
       </select>}
     <button className="py-2 px-4 my-2 mx-4 bg-purple-800 text-white rounded-lg"onClick={handleGPTsearch}>{showgpt?"Homepage":"GPT search"} </button>
+    
     <img className="w-11 h-12 hidden md:block" alt="usericon" src={UserIcon}/>
     <button onClick={handlesignout}className="px-2 hover:bg-white hover:text-black text-white font-bold">Login-:{user.displayName.toUpperCase()}</button>
     </div>}
 </div>
     )
 }
+
 export default Header;
